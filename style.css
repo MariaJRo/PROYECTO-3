@@ -1,0 +1,222 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-weight: 400;
+  font-style: normal;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: var(--color-100);
+}
+
+:root {
+  --color-0: white;
+  --color-1: black;
+  --color-2: rgba(117, 117, 117, 1);
+  --color-3: rgba(236, 236, 236, 1);
+  --color-4: rgba(211, 242, 125, 1);
+  --color-5: rgba(125, 242, 242, 1);
+  --color-6: rgba(244, 8, 8, 1);
+  --color-7: rgba(0, 244, 10, 1);
+  --color-8: rgba(77, 5, 230, 1);
+  --color-9: rgba(240, 255, 198, 1);
+  --color-10: rgba(26, 6, 255, 1);
+  --color-11: rgba(251, 196, 0, 1);
+  --color-12: rgba(65, 79, 24, 1);
+  --color-13: rgba(14, 150, 125, 1);
+
+  --margin-xxs: 5px;
+  --margin-xs: 10px;
+  --margin-s: 20px;
+  --margin-m: 30px;
+  --margin-l: 40px;
+  --margin-xl: 50px;
+  --margin-xxl: 60px;
+
+  --padding-xxs: 5px;
+  --padding-xs: 10px;
+  --padding-s: 20px;
+  --padding-m: 30px;
+  --padding-l: 40px;
+  --padding-xl: 50px;
+  --padding-xxl: 60px;
+
+  --gap-xs: 10px;
+  --gap-s: 20px;
+  --gap-m: 30px;
+  --gap-l: 40px;
+  --gap-xl: 50px;
+  --gap-xxl: 60px;
+
+  --border-radius-xs: 10px;
+  --border-radius-s: 20px;
+  --border-radius-m: 30px;
+  --border-radius-circle: 100%;
+  --box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+.flex-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+} /* por si acaso*/
+
+body {
+  font-family: 'Tajawal', sans-serif;
+}
+
+body > header {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: var(--padding-xs);
+  flex-wrap: wrap;
+}
+
+body > header > img {
+  max-height: 30px;
+}
+
+body > header > nav {
+  display: flex;
+  flex-wrap: wrap;
+}
+body > header > nav > ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body > header > nav > ul > li {
+  height: 40px;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  padding: var(--padding-s) var(--padding-s);
+}
+
+body > header > nav > ul > li:hover {
+  color: var(--color-0);
+  background-color: var(--color-1);
+  border-radius: var(--border-radius-m);
+  cursor: pointer;
+}
+
+.searchContainer {
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  background-color: var(--color-3);
+  border-radius: var(--border-radius-m);
+  border: var(--box-shadow);
+  padding: 5px;
+}
+
+.searchContainer input {
+  flex-grow: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  padding-left: 10px;
+  width: 600px;
+}
+
+.searchButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+}
+
+.searchButton img {
+  width: 20px;
+  height: 20px;
+}
+
+.menuIconContainer {
+  display: flex;
+  align-items: center;
+  align-content: center;
+  margin: 20px;
+  width: 10%;
+}
+
+.menuIconContainer > ul {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.menuIconContainer > ul > li > a > img {
+  height: 30px;
+  width: 30px;
+}
+
+.menuIconContainer > ul > li > a > img:hover {
+  background-color: var(--color-2);
+  border-radius: var(--border-radius-circle);
+  padding: 3px;
+}
+
+#masonry-container {
+  column-count: 3;
+  column-gap: var(--gap-s);
+  padding: var(--padding-s);
+}
+
+.card {
+  background-color: #fff;
+  margin-bottom: var(--margin-s);
+  border-radius: var(--border-radius-s);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  display: inline-block;
+  width: 100%;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.5s;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card img {
+  width: 100%;
+  display: block;
+}
+
+.card-content {
+  padding: var(--padding-s);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 2px solid blue;
+}
+
+.card-content h3 {
+  margin: 0 0 0.5rem 0;
+  border: 2px solid rgb(255, 0, 4);
+}
+
+.card-content p {
+  margin: 0;
+  border: 2px solid rgb(255, 242, 0);
+}
+.card-content img:last-child {
+  width: 60px;
+  height: 60px;
+  border: 4px solid yellowgreen; /* Esto se puede hacer aleatorio como el fondo de los tenis en el proyecto 2*/
+  margin: var(--margin-s);
+  border-radius: var(--border-radius-circle);
+  object-fit: cover;
+}
