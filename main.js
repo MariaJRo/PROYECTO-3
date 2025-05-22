@@ -1,10 +1,10 @@
 import './style.css'
 import { createHeader } from './src/header.js'
-import './src/gallery.js' // No tengo muy claro si esto está bien así (¿Utilizo una función como en el header?)
+import './src/gallery.js'
+import { handleSearch } from './src/search.js'
+import './src/footer.js'
 
 document.body.insertBefore(createHeader(), document.body.firstChild)
-
-import { handleSearch } from './src/search.js'
 
 const searchButton = document.querySelector('.searchButton')
 const searchInput = document.querySelector('.searchContainer input')
@@ -15,3 +15,4 @@ searchButton.addEventListener('click', () => {
     handleSearch(text)
   }
 })
+handleSearch('La Gomera')

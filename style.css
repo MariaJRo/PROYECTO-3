@@ -31,6 +31,7 @@ a {
   --color-11: rgba(251, 196, 0, 1);
   --color-12: rgba(65, 79, 24, 1);
   --color-13: rgba(14, 150, 125, 1);
+  --color-14: rgba(126, 22, 4, 0.964);
 
   --margin-xxs: 5px;
   --margin-xs: 10px;
@@ -66,10 +67,17 @@ a {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-} /* por si acaso*/
+}
+
+html,
+body {
+  height: 100%;
+}
 
 body {
   font-family: 'Tajawal', sans-serif;
+  display: flex;
+  flex-direction: column;
 }
 
 body > header {
@@ -112,7 +120,6 @@ body > header > nav > ul > li:hover {
   position: relative;
   display: flex;
   align-items: center;
-
   background-color: var(--color-3);
   border-radius: var(--border-radius-m);
   border: var(--box-shadow);
@@ -162,20 +169,15 @@ body > header > nav > ul > li:hover {
   width: 30px;
 }
 
-.menuIconContainer > ul > li > a > img:hover {
-  background-color: var(--color-2);
-  border-radius: var(--border-radius-circle);
-  padding: 3px;
-}
-
 #masonry-container {
+  flex: 1;
   column-count: 3;
   column-gap: var(--gap-s);
   padding: var(--padding-s);
+  box-shadow: var(--box-shadow);
 }
 
 .card {
-  background-color: #fff;
   margin-bottom: var(--margin-s);
   border-radius: var(--border-radius-s);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
@@ -200,23 +202,77 @@ body > header > nav > ul > li:hover {
   display: flex;
   flex-direction: column;
   align-items: center;
-  border: 2px solid blue;
 }
 
 .card-content h3 {
   margin: 0 0 0.5rem 0;
-  border: 2px solid rgb(255, 0, 4);
 }
 
-.card-content p {
-  margin: 0;
-  border: 2px solid rgb(255, 242, 0);
+.card-content h3:hover {
+  color: var(--color-11);
 }
+
 .card-content img:last-child {
   width: 60px;
   height: 60px;
-  border: 4px solid yellowgreen; /* Esto se puede hacer aleatorio como el fondo de los tenis en el proyecto 2*/
   margin: var(--margin-s);
   border-radius: var(--border-radius-circle);
   object-fit: cover;
+}
+
+.hearts::after {
+  content: ' ❤️';
+}
+
+footer {
+  background-color: var(--color-14);
+  color: var(--color-0);
+}
+
+.footerSect {
+  margin: 50px;
+  gap: var(--gap-xxl);
+}
+
+.footerDiv {
+  min-width: 200px;
+}
+
+.footerDiv > h3 {
+  margin-bottom: var(--margin-xs);
+}
+
+.footerDiv > ul > li:hover {
+  cursor: pointer;
+  color: var(--color-1);
+}
+
+@media (max-width: 1111px) {
+  .menuIconContainer {
+    display: none;
+  }
+}
+
+@media (max-width: 961px) {
+  .searchContainer {
+    margin: 10px;
+    width: 75%;
+  }
+
+  #masonry-container {
+    column-count: 2;
+  }
+}
+
+@media (max-width: 600px) {
+  #masonry-container {
+    column-count: 1;
+    padding: var(--margin-xxl);
+  }
+}
+
+@media (max-width: 400px) {
+  #masonry-container {
+    padding: var(--margin-s);
+  }
 }

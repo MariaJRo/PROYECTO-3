@@ -8,16 +8,15 @@ export const handleSearch = (query) => {
   fetch(url)
     .then((response) => response.json())
     .then((data) => {
-      const resultados = data.results
+      const results = data.results
       const container = document.getElementById('masonry-container')
       container.innerHTML = ''
-
-      resultados.forEach((item) => {
+      results.forEach((item) => {
         const imageUrl = item.urls.small
         const userName = item.user.name
-        const description = item.alt_description || 'Sin descripción'
-        const profileImg = item.user.profile_image.small // La calidad en small de la imagen de perfil es malísima, hay que probar con medium y large
-        createCard(imageUrl, userName, description, profileImg)
+        const likes = item.likes || ''
+        const profileImg = item.user.profile_image.large
+        createCard(imageUrl, userName, likes, profileImg)
       })
     })
     .catch((error) => {
