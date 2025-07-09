@@ -18,8 +18,14 @@ export const handleSearch = (query) => {
         const profileImg = item.user.profile_image.large
         createCard(imageUrl, userName, likes, profileImg)
       })
+
+      const input = document.querySelector('input')
+      if (input) input.value = ''
     })
     .catch((error) => {
       console.error('Error al buscar imágenes:', error)
+
+      const input = document.querySelector('input')
+      if (input) input.value = ''
     })
 }

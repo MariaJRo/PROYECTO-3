@@ -3,6 +3,7 @@ export const createLogo = () => {
   logo.src =
     'https://upload.wikimedia.org/wikipedia/commons/0/08/Pinterest-logo.png'
   logo.alt = 'logo'
+  logo.id = 'restartLogo'
   return logo
 }
 

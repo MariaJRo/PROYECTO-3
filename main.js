@@ -2,6 +2,7 @@ import './style.css'
 import { createHeader } from './src/header.js'
 import './src/gallery.js'
 import { handleSearch } from './src/search.js'
+import { clickLogo } from './src/restart.js'
 import './src/footer.js'
 
 document.body.insertBefore(createHeader(), document.body.firstChild)
@@ -16,3 +17,5 @@ searchButton.addEventListener('click', () => {
   }
 })
 handleSearch('La Gomera')
+
+clickLogo()
