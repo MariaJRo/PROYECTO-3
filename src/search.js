@@ -1,6 +1,8 @@
 import { createCard } from './gallery.js'
 
-const accessKey = 't0lQJGetRCW_qkA7VqiihT91vhSIrQqj3ZEynjrxjDE'
+const accessKey = import.meta.env.VITE_ACCESS_KEY
+
+console.log('Access key:', accessKey)
 
 export const handleSearch = (query) => {
   const url = `https://api.unsplash.com/search/photos?query=${query}&per_page=12&client_id=${accessKey}`
